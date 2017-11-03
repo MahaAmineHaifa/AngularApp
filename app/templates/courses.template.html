@@ -1,0 +1,18 @@
+<h2>Courses</h2>
+<span>{{ title }}</span> <input type="text" autoGrow />
+<ul>
+    <li *ngFor="#course of courses">
+        {{ course.getTitle() }}
+
+        <vote [myVote]="course.getMyVote()" [voteCount]="course.getVoteCount()">
+        </vote>
+
+        <!--<like [isLiked] = "course.getIsLiked()"
+                                [likesNumber] = "course.getLikesNumber()">
+                        </like>-->
+
+        <!--<favourite [isFavourite]="course.getIsFavourite()"
+                                    (change)="onFavouriteClick($event)">
+                        </favourite>-->
+    </li>
+</ul>

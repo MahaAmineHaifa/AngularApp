@@ -1,0 +1,19 @@
+<div *ngIf="tweets.length >= 1">
+    <div *ngFor="#tweet of tweets">
+        <zippy [title]="tweet.name">
+            <div class="media">
+                <div class="media-left">
+                    <img class="media-object" [src]="tweet.imgURL" alt="...">
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">{{ tweet.name }}</h4>
+                    <like [isLiked]="tweet.isLiked" [likesNumber]="tweet.likesNumber">
+                    </like>
+                </div>
+            </div>
+        </zippy>
+    </div>
+</div>
+<div *ngIf="tweets.length === 0">
+    No tweets
+</div>
